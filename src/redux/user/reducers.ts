@@ -17,7 +17,7 @@ export interface UserI {
   };
   phone: string;
   website: string;
-  company: {
+  company: null | {
     name: string;
     catchPhrase: string;
     bs: string;
@@ -27,7 +27,7 @@ export interface UserI {
 export interface UsersInitial {
   isLoading: boolean;
   users: UserI[];
-  usersError: null;
+  usersError: null | string;
 }
 
 export const initialState: UsersInitial = {
@@ -41,7 +41,11 @@ const userReducer = (state = initialState, action: any): UsersInitial => {
     case GET_USERS:
       return {...state, usersError: null, isLoading: true};
     case GET_USERS_FAILED:
-      return {...state, usersError: action.payload, isLoading: false};
+      return {
+        ...state,
+        usersError: action.payload,
+        isLoading: false,
+      };
     case GET_USERS_DONE:
       return {...state, users: action.payload, isLoading: false};
 

@@ -15,6 +15,12 @@ export default function HomeScreen() {
         onPress={() => navigation.navigate('UserScreen')}
         title="User Screen"
       />
+
+      <Button
+        onPress={() => navigation.navigate('UserScreen')}
+        title="User Screen"
+        small
+      />
     </View>
   );
 }

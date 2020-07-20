@@ -12,6 +12,6 @@ export const getUsers = () => async (dispatch: any) => {
     const response = await axios.get(`${API_URL}/users/`);
     dispatch({type: GET_USERS_DONE, payload: response.data});
   } catch (error) {
-    dispatch({type: GET_USERS_FAILED, payload: getError(error)});
+    dispatch({type: GET_USERS_FAILED, payload: getError(dispatch)});
   }
 };
