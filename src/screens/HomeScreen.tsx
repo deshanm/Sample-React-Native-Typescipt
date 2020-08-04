@@ -15,11 +15,17 @@ export default function HomeScreen() {
         onPress={() => navigation.navigate('UserScreen')}
         title="User Screen"
       />
-
       <Button
         onPress={() => navigation.navigate('UserScreen')}
         title="User Screen"
-        small
+      />
+      <Button
+        onPress={() => navigation.navigate('FlatListScreen')}
+        title="Flat List Screen"
+      />
+      <Button
+        onPress={() => navigation.navigate('ReactSelectorExample')}
+        title="React Selector Example"
       />
     </View>
   );

@@ -6,6 +6,8 @@ export const GET_USERS = 'GET_USERS';
 export const GET_USERS_DONE = 'GET_USERS_DONE';
 export const GET_USERS_FAILED = 'GET_USERS_FAILED';
 
+export const UPDATE_RANDOM = 'UPDATE_RANDOM';
+
 export const getUsers = () => async (dispatch: any) => {
   try {
     dispatch({type: GET_USERS});
@@ -14,4 +16,8 @@ export const getUsers = () => async (dispatch: any) => {
   } catch (error) {
     dispatch({type: GET_USERS_FAILED, payload: getError(dispatch)});
   }
+};
+
+export const updateRandom = (payload: number) => async (dispatch: any) => {
+  dispatch({type: UPDATE_RANDOM, payload});
 };
